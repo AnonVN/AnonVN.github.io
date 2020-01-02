@@ -1,0 +1,19 @@
+{
+  "name": "nodejsk2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "linh.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon linh.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "expess": "0.0.1-security",
+    "express": "^4.17.1",
+    "module": "^1.2.5",
+    "moment": "^2.24.0",
+    "nodemon": "^2.0.2"
+  }
+}
