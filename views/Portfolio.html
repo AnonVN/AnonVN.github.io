@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial;
+            padding: 10px;
+            background: #99acec;
+        }
+
+     
+        .header {
+            padding: 30px;
+            text-align: center;
+            background: rgb(233, 168, 168);
+        }
+
+        .header h1 {
+            font-size: 50px;
+        }
+
+     
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+      
+        .topnav a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .topnav a:hover {
+            background-color: rgb(85, 30, 30);
+            color: black;
+        }
+
+
+        .leftcolumn {
+            float: left;
+            width: 75%;
+        }
+
+        .rightcolumn {
+            float: left;
+            width: 25%;
+            background-color: #2aa5ca;
+            padding-left: 20px;
+        }
+
+        /* Fake image */
+        .fakeimg {
+            background-color: #aaa;
+            width: 100%;
+            padding: 20px;
+        }
+
+
+        .card {
+            background-color: rgb(241, 218, 11);
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .footer {
+            padding: 20px;
+            text-align: center;
+            background: rgb(8, 241, 40);
+            margin-top: 20px;
+        }
+
+        @media screen and (max-width: 800px) {
+
+            .leftcolumn,
+            .rightcolumn {
+                width: 100%;
+                padding: 0;
+            }
+        }
+
+
+      
+      
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav m-auto">
+                <li class="nav-item active">
+                    <a class="nav-link px-3 border border-success rounded-pill m-2 text-center" href="./"><strong>HOME
+                        </strong><span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link px-3 border border-success rounded-pill m-2 text-center"
+                        href="./services"><strong>services</strong><span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link px-3 border border-success rounded-pill m-2 text-center"
+                        href="./Contact"><strong>Contact
+                        </strong><span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link px-3 border border-success rounded-pill m-2 text-center"
+                        href="./Portfolio"><strong>Portfolio
+                        </strong><span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0 d-flex justify-content-center">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+<div>
+    <div class="header">
+        <h1>My Header</h1>
+    </div>
+
+    <div class="row">
+        <div class="leftcolumn">
+            <div class="card">
+                <div class="fakeimg" style="height:200px;">Image</div>
+            </div>
+            <div class="card">
+                <div class="fakeimg" style="height:200px;">popcap</div>
+            </div>
+        </div>
+        <div class="rightcolumn">
+            <div class="card">
+                <div class="fakeimg" style="height:100px;">Laptop</div>
+            </div>
+            <div class="card">
+                <div class="fakeimg">
+                    <p>Right</p>
+                </div>
+                <div class="fakeimg">
+                    <p>Right</p>
+                </div>
+
+            </div>
+            <div class="card">
+                <h3>right bottom</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h2>Footer</h2>
+    </div>
+</div>
+</body>
+
+</html>

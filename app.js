@@ -1,44 +1,24 @@
-const express = require('express')
-const app = express()
-const port = process.env.PORT||3000
-const path = require('path')
-const chim = require('./Router/popcap.js')
-const download = require('./Router/download.js')
-// const bodyParser = require("body-parser");
-const post = require('./Router/post.js')
+const express = require("express");
+const path = require('path');
+const linh = express()
+const port = 3000;
 
-
-
-app.use('/login',post)
-
-app.use('/dragon/chim',chim)
-
-app.use('/download',download )
-
-app.use('/static',express.static(path.join(__dirname,'./public')))
-
-app.get('/',(req,res,next)=>{
-    res.sendFile(path.join(__dirname,'./views/testajax.html'))
+linh.use('/static', express.static(path.join(__dirname, 'views')))
+console.log(__dirname);
+linh.get('/', (req, res, next) => {
+    res.sendFile(path.join(__dirname, './public/views/index.html'))
 })
-app.get('/test',(req,res,next)=>{
-    res.sendFile(path.join(__dirname,'./views/test.html'))
+linh.get('/Contact', (req, res, next) => {
+    res.sendFile(path.join(__dirname, './static/views/Contact.html'))
 })
-app.get('/index',(req,res,next)=>{
-    res.sendFile(path.join(__dirname,'./views/index.html'))
+linh.get('/services', (req, res, next) => {
+    res.sendFile(path.join(__dirname, './static/views/services.html'))
+})
+linh.get('/Portfolio', (req, res, next) => {
+    res.sendFile(path.join(__dirname, './static/views/Portfolio.html'))
 })
 
-app.listen(port,()=>{
-    console.log('listten me');
+
+linh.listen(port, () => {
+    console.log(`listen on ${port}`);
 })
-
-// app.set("views", path.resolve(__dirname, "views"));
-// app.set("view engine", "ejs");
-
-// app.use(bodyParser.urlencoded({ extended: false }));
-
-// app.use(routes);
-
-// app.listen(3000);
-
-
-

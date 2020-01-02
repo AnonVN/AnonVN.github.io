@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style >
+        input{
+            width: 750px;
+            height: 30px;
+            color: red;
+            font-size: 20px;
+        }
+        body{
+            background-color: rgb(175, 247, 8);
+        }
+
+    </style>
+</head>
+<body>
+    <input type="text" id="fd" onkeypress="onkey()">
+    <script>
+      var doing
+       function onkey(){
+           clearTimeout(doing)
+        doing = setTimeout(function(){
+            console.log(document.getElementById('fd').value);
+        },1000)
+       }
+       document.addEventListener('scroll',function up(){
+            clearTimeout(doing)
+            doing = setTimeout(function(){
+                console.log('good bye');
+            },1000);
+       })
+       
+    </script>
+</body>
+
+</html>
