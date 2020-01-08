@@ -15,13 +15,13 @@ app.get('/', (req, res, next) => {
     res.sendFile(path.join(__dirname, './index.html'))
 })
 app.get('/Contact', (req, res, next) => {
-    res.sendFile(path.join(__dirname, './views/Contact.html'))
+    res.sendFile(path.join(__dirname, './Contact.html'))
 })
 app.get('/services', (req, res, next) => {
-    res.sendFile(path.join(__dirname, './views/services.html'))
+    res.sendFile(path.join(__dirname, './services.html'))
 })
 app.get('/Portfolio', (req, res, next) => {
-    res.sendFile(path.join(__dirname, './views/Portfolio.html'))
+    res.sendFile(path.join(__dirname, './Portfolio.html'))
 })
 
 
