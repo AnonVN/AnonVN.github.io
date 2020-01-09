@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 .block1 {
-    background: url('/static/img/1000.jpg')no-repeat;
+    background: url('../img/1000.jpg')no-repeat;
 }
 .block1 header nav {
     background: rgba(0, 0, 0, 0.4);
@@ -46,25 +46,25 @@
 }
 
 .block2 section .icon-01 {
-    background: url('/static/img/services-coffee.png')no-repeat;
+    background: url('../img/services-coffee.png')no-repeat;
     height: 50px;
 
 }
 
 .block2 section .icon-02 {
-    background: url('/static/img/55.png')no-repeat;
+    background: url('../img/55.png')no-repeat;
     height: 50px;
 
 }
 
 .block2 section .icon-03 {
-    background: url('/static/img/88.png')no-repeat;
+    background: url('../img/88.png')no-repeat;
     height: 50px;
 
 }
 
 .block2 section .icon-04 {
-    background: url('/static/img/66.png')no-repeat;
+    background: url('../img/66.png')no-repeat;
     height: 50px;
 
 }
@@ -146,7 +146,7 @@ a {
 
 .block4 {
    
-    background: url('/static/img/00.jpg')no-repeat;
+    background: url('../img/00.jpg')no-repeat;
 }
 .block4 section {
     padding: 80px 0;
@@ -197,7 +197,7 @@ a {
 
 .block6 {
     background: linear-gradient(rgba(0, 0, 0, 0.7),
-            rgba(0, 0, 0, 0.7)), url('/static/img/santa_claus_christmas_eve-wallpaper-1366x768.jpg') center;
+            rgba(0, 0, 0, 0.7)), url('../img/santa_claus_christmas_eve-wallpaper-1366x768.jpg') center;
     background-size: cover;
     padding: 80px 0;
 }
@@ -232,7 +232,7 @@ a {
 
 .block8 {
     background: linear-gradient(rgba(0, 0, 0, 0.7),
-            rgba(0, 0, 0, 0.7)), url('/static/img/2.jpg') center;
+            rgba(0, 0, 0, 0.7)), url('../img/1.jpg') center;
     background-size: cover;
     padding: 80px 0;
 }

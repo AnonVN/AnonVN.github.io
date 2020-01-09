@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 .bg {
-    background-image: url('../Node2/img/00.jpg');	
+    background-image: url('../img/00.jpg');	
     background-repeat: no-repeat;
     background-size: 100% auto;
 }
