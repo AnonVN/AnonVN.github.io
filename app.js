@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require('path');
 const app = express()
-const port = 3000;
+const port = process.env.PORT || 3000;
 // const post = require('../Node2/html/post.js');
 // const mongoose = require('mongoose')
 // mongoose.Promise = global.Promise
