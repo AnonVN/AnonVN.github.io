@@ -12,16 +12,16 @@ const port = 3000;
 app.use('/static', express.static(path.join(__dirname, 'public')))
 console.log(__dirname);
 app.get('/', (req, res, next) => {
-    res.sendFile(path.join(__dirname, './index.html'))
+    res.sendFile(path.join(__dirname, './views/index.html'))
 })
 app.get('/Contact', (req, res, next) => {
-    res.sendFile(path.join(__dirname, './Contact.html'))
+    res.sendFile(path.join(__dirname, './views/Contact.html'))
 })
 app.get('/services', (req, res, next) => {
-    res.sendFile(path.join(__dirname, './services.html'))
+    res.sendFile(path.join(__dirname, './views/services.html'))
 })
 app.get('/Portfolio', (req, res, next) => {
-    res.sendFile(path.join(__dirname, './Portfolio.html'))
+    res.sendFile(path.join(__dirname, './views/Portfolio.html'))
 })
 
 
