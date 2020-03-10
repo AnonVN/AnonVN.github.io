@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Monkey D. Luffy</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+  <style>
+    body {
+      margin: 72px;
+      padding: 0px;
+
+      background-image: linear-gradient(to bottom left, #cd295a, #38adae);
+    }
+
+    .colors {
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1 style="text-align: center;" class="colors">Bạn chưa có tài khoản và mật khẩu đăng ký bên dưới dùm :))</h1>
+
+    <form action="/api/create" method="post">
+
+      <div class="form-group">
+        <label class="colors">Họ và Tên</label>
+        <input type="text" name="name" class="form-control" placeholder="Monkey D. Luffy" required="">
+      </div>
+      <div class="form-group">
+        <label class="colors">số điện thoại</label>
+        <input type="text" name="phonenumber" class="form-control"placeholder="+84.." required="">
+      </div>
+      <div class="form-group">
+        <label class="colors">Địa chỉ Email</label>
+        <input type="text" name="email" class="form-control"placeholder="Luffy@gmail.com" required="">
+      </div>
+      <div class="form-group">
+        <label class="colors">Mật khẩu</label>
+        <input type="text" name="password" class="form-control"placeholder="lớn hơn 6 ký tự có cả chữ và số" required="">
+      </div>
+
+      <button type="submit" class="btn btn-success save-btn">Đăng ký</button>
+      <button type="submit" class="btn btn-success save-btn"><a href="./">Đăng nhập</a></button>
+
+    </form>
+
+  </div>
+  
+
+</body>
+
+</html>
