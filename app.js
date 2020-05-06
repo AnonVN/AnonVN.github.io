@@ -1,70 +1,40 @@
-const express = require("express");
-const path = require('path');
-const app = express()
-const port = 3000;
-const apiRouter = require('./routes/api');
+var createError = require('http-errors');
+var express = require('express');
+var path = require('path');
+var cookieParser = require('cookie-parser');
+var logger = require('morgan');
 
-const bodyPaser = require("body-parser")
-app.use(bodyPaser.urlencoded({extended:false}))
-app.use(bodyPaser.json())
+var indexRouter = require('./routes/index');
+var apiRouter = require('./routes/api');
 
-const passport = require('passport'),
-FacebookStrategy = require('passport-facebook').Strategy;
+var app = express();
 
-app.use(passport.initialize());
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use('/static',express.static(path.join(__dirname, 'public')));
 
-passport.use(new FacebookStrategy({
-    clientID: '2679285842308625',
-    clientSecret:'9949:5802f5becbcf006eca0c14865c3',
-    callbackURL: "https://3d7bd8ff.ngrok.io/auth/facebook/callback"
-  },
-  function(accessToken, refreshToken, profile, done) {
-   console.log('get ok');
-      done(null, profile);
-  }
-));
+app.use('/', indexRouter);
+app.use('/v1/api', apiRouter);
 
-
-passport.serializeUser(function  (user , done) {
-    console.log('serializeUser', user);
-    done(null,user)
-})
-
-passport.deserializeUser(function  (id, done) {
-    console.log('deserializeUser', user);
-    done(null,user)
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  next(createError(404));
 });
 
+// error handler
+app.use(function(err, req, res, next) {
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.error = req.app.get('env') === 'development' ? err : {};
 
+  // render the error page
+  res.status(err.status || 500);
+  res.render('error');
+});
 
-app.get('/auth/facebook', passport.authenticate('facebook'));
-
-app.get('/auth/facebook/callback',
-  passport.authenticate('facebook', { successRedirect: '/index',
-                                      failureRedirect: '/' }));
-
-
-app.use('/api', apiRouter);
-app.use('/static', express.static(path.join(__dirname, 'public')))
-console.log(__dirname);
-app.get('/index', (req, res, next) => {
-    res.sendFile(path.join(__dirname, './views/index.html'))
-})
-app.get('/Contact', (req, res, next) => {
-    res.sendFile(path.join(__dirname, './views/Contact.html'))
-})
-app.get('/services', (req, res, next) => {
-    res.sendFile(path.join(__dirname, './views/services.html'))
-})
-app.get('/', (req, res, next) => {
-    res.sendFile(path.join(__dirname, './views/login.html'))
-})
-app.get('/dangky', (req, res, next) => {
-    res.sendFile(path.join(__dirname, './views/dangky.html'))
-})
-
-
-app.listen(port, () => {
-    console.log(`listen on ${port}`);
-})
+module.exports = app;
