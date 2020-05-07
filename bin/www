@@ -27,7 +27,7 @@ var server = http.createServer(app);
  */
 
 server.listen(port,()=>{
-  wakeUpDyno('https://git.heroku.com/quizloggetcode.git',60000*25)
+  wakeUpDyno('https://quizloggetcode.herokuapp.com/',60000*25)
 });
 server.on('error', onError);
 server.on('listening', onListening);
